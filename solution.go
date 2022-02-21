@@ -12,9 +12,15 @@ import "math"
 
 type NumSides int
 
+const (
+	SidesTriangle NumSides = 3
+	SidesSquare   NumSides = 4
+	SideCircle    NumSides = 0
+)
+
 func CalcSquare(sideLen float64, sidesNum NumSides) float64 {
 	if sidesNum == 3 {
-		return (math.Sqrt(3) / 4) * sideLen
+		return (math.Sqrt(3) / 4) * sideLen * sideLen
 	} else if sidesNum == 4 {
 		return sideLen * sideLen
 	} else if sidesNum == 0 {
